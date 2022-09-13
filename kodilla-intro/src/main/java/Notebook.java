@@ -18,7 +18,7 @@ public class Notebook {
         }
     }
 
-    public void chceckWeight() {
+    public void checkWeight() {
         if (this.weight > 1500) {
             System.out.println("This device is very heavy");
         } else if (this.weight < 1500 && this.weight > 1000) {

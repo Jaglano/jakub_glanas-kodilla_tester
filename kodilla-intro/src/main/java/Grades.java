@@ -18,6 +18,7 @@ public class Grades {
 
     public void lastGrade(int value) {
         int index = grades[this.size-1];
+        System.out.println(index);
     }
 
 
@@ -25,9 +26,7 @@ public class Grades {
         for(int i = 0; i < grades.length; i++){
             sum+=grades[i];
             double averageGrade = sum / size;
+            System.out.println(averageGrade);
         }
-    }
-    public class Journal {
-
     }
 }

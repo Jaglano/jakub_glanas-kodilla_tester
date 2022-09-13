@@ -8,5 +8,6 @@ public class Main {
         String hello = "Hello from FirstClass!";
         System.out.println(myName);
         System.out.println(hello);
+
     }
 }

@@ -13,8 +13,19 @@ public class Main {
     int sum = 0;
 
     for (int i = 0; i < users.length; i++) {
-        sum = sum + ;
-        System.out.println(sum);
+        sum = sum + users[i].howOld;
         }
+        System.out.println(sum);
+
+
+
+        Grades grades = new Grades();
+        grades.add(2);
+
+        System.out.println(grades.lastGrade());
+
+        grades.add(5);
+        System.out.println(grades.averageGrades());
     }
+
 }

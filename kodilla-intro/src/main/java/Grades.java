@@ -16,17 +16,23 @@ public class Grades {
         this.size++;
     }
 
-    public void lastGrade(int value) {
-        int index = grades[this.size-1];
-        System.out.println(index);
+    public int lastGrade() {
+        if (size==0){
+            System.out.println("There is no grades");
+            return 0;
+        }
+        return grades[size-1];
+
     }
 
-
-    public void average() {
+    public int averageGrades() {
+        int sum = 0;
         for(int i = 0; i < grades.length; i++){
             sum+=grades[i];
-            double averageGrade = sum / size;
-            System.out.println(averageGrade);
+
         }
+        return sum / size;
+
     }
 }
+

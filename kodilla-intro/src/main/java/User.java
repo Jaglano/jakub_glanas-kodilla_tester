@@ -7,8 +7,21 @@ public class User {
         this.howOld = howOld;
     }
 
+
+
+    public String getName() {
+        return name;
+    }
+
+    public int getHowOld() {
+        return howOld;
+    }
+
     public void setHowOld(int howOld) {
         this.howOld = howOld;
-        return;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

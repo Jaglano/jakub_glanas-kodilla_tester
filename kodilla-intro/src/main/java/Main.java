@@ -22,10 +22,10 @@ public class Main {
         Grades grades = new Grades();
         grades.add(2);
 
-        System.out.println(grades.lastGrade());
+        System.out.println("Ostatnia ocena to: " + grades.lastGrade());
 
         grades.add(5);
-        System.out.println(grades.averageGrades());
+        System.out.println("Średnia ocen to: " + grades.averageGrades());
     }
 
 }

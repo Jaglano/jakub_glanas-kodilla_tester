@@ -16,7 +16,7 @@ public class Grades {
         this.size++;
     }
 
-    public int lastGrade() {
+    public double lastGrade() {
         if (size==0){
             System.out.println("There is no grades");
             return 0;
@@ -25,8 +25,8 @@ public class Grades {
 
     }
 
-    public int averageGrades() {
-        int sum = 0;
+    public double averageGrades() {
+        double sum = 0;
         for(int i = 0; i < grades.length; i++){
             sum+=grades[i];
 

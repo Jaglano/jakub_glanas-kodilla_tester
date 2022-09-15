@@ -17,8 +17,28 @@ public class Main {
         }
         System.out.println(sum);
 
+    int averageAge = sum / users.length;
+        System.out.println(averageAge);
 
 
+
+    for (int i = 0; i < users.length; i++) {
+        if (averageAge > users[i].howOld) {
+            System.out.println("Osoby, których wiek jest poniżej średniej: " + users[i].name);
+        }
+    }
+
+    // 2.6 pkt 2 zadania
+        RandomNumbers numbers = new RandomNumbers();
+        numbers.draw();
+        System.out.println("Minimalna wartość to: " + numbers.minimum());
+        System.out.println("Max: " + numbers.maximum());
+
+
+
+
+
+    // poniżej dotyczy zadania 2.4 klasa Grades
         Grades grades = new Grades();
         grades.add(2);
 

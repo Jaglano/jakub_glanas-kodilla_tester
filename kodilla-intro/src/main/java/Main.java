@@ -31,8 +31,11 @@ public class Main {
     // 2.6 pkt 2 zadania
         RandomNumbers numbers = new RandomNumbers();
         numbers.draw();
+        RandomNumbers minimum = new RandomNumbers();
+        RandomNumbers maximum = new RandomNumbers();
+
         System.out.println("Minimalna wartość to: " + numbers.minimum());
-        System.out.println("Max: " + numbers.maximum());
+        System.out.println("Maksymalna wartość to: " + numbers.maximum());
 
 
 

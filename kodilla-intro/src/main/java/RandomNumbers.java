@@ -14,7 +14,7 @@ public class RandomNumbers {
             if ( b < numbers) { //maximum
                 b = numbers;
             }
-        } while (sum <= 5000);
+        } while (sum <= 50);
 
 
     }

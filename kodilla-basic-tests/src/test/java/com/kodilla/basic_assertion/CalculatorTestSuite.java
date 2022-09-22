@@ -31,10 +31,29 @@ public class CalculatorTestSuite {
     @Test
     public void testSquare(){
         Calculator calculator = new Calculator();
-        double a = 50;
-        double b = 10;
+        double a = 50.0;
+        double b = 0;
         double delta = 0.1;
         double squaredResult = calculator.squared(a, a);
-        assertEquals2(225, squaredResult, delta);
+        assertEquals2(2250, squaredResult, delta);
+    }
+
+    @Test
+    public void testSquare2(){
+        Calculator calculator = new Calculator();
+        double a = 0.0;
+        double b = 0;
+        double delta = 0.1;
+        double squaredResult = calculator.squared(a, a);
+        assertEquals2(0, squaredResult, delta);
+    }
+
+    public void testSquare3(){
+        Calculator calculator = new Calculator();
+        double a = -50;
+        double b = 0;
+        double delta = 0.1;
+        double squaredResult = calculator.squared(a, a);
+        assertEquals2(-2250, squaredResult, delta);
     }
 }

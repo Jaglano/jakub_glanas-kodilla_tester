@@ -4,12 +4,12 @@ public class Person {
 
     String firstName;
     int age;
-    String job;
+    private Job teacher;
 
-    public Person(String firstName, int age, String job){
+
+    public Person(String firstName, int age, Job teacher){
     }
 
-    Person Kazimierz = new Person("Kazimierz", 67, "teacher");
 
     public static void main(String[] args) {
 

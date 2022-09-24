@@ -4,19 +4,21 @@ public class Person {
 
     String firstName;
     int age;
-    private Job job;
+    Job job;
 
 
     public Person(String firstName, int age, Job job){
+        this.firstName = firstName;
+        this.age = age;
+        this.job = job;
+
     }
 
+        public void showResponsibilities(){
+            System.out.println(job.responsibilities);
+        }
 
     public static void main(String[] args) {
-
-
-
-        Accountant accountant = new Accountant();
-        accountant.Responobility();
     }
 }
 

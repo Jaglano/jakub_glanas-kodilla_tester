@@ -11,7 +11,6 @@ public class Person {
         this.firstName = firstName;
         this.age = age;
         this.job = job;
-
     }
 
         public void showResponsibilities(){

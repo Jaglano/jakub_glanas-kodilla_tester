@@ -1,5 +1,6 @@
 package com.kodilla.bank.homework;
 
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -36,6 +37,26 @@ public class BankTestSuite {
     public void shouldHave600Saldo(){
 
         assertEquals(600, bank.bilans());
+    }
+
+    @Test
+    public void shoudHaveQuantityOfCashWithdrawal(){
+        assertEquals(3, bank.cashWithdrawal());
+    }
+
+    @Test
+    public void shouldHaveQuantityOfCashDeposit(){
+        assertEquals(6, bank.cashDeposit());
+    }
+
+    @Test
+    public void shouHaveAverageCashWithdrawal(){
+        assertEquals(453.66,bank.averageMinus(), 0.0001);
+    }
+
+    @Test
+    public void shouldHaveAverageCashWithdrawal(){
+        assertEquals(326.83,bank.averagePlus(), 0.0001);
     }
 
 

@@ -17,7 +17,6 @@ public class CashMachine {
         newTab[this.size - 1] = value;
         this.values = newTab;
     }
-
     public int[] getValues() {
         return values;
     }

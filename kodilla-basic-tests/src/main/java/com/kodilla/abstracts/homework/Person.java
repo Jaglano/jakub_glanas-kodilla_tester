@@ -4,10 +4,10 @@ public class Person {
 
     String firstName;
     int age;
-    private Job teacher;
+    private Job job;
 
 
-    public Person(String firstName, int age, Job teacher){
+    public Person(String firstName, int age, Job job){
     }
 
 

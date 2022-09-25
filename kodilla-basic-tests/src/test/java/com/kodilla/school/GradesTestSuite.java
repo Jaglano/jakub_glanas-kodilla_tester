@@ -40,4 +40,5 @@ public class GradesTestSuite {
         Grades grades = new Grades();
         assertEquals(0, grades.getAverage(), 0.0001);
     }
+
 }

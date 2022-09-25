@@ -50,14 +50,26 @@ public class BankTestSuite {
     }
 
     @Test
-    public void shouHaveAverageCashWithdrawal(){
+    public void shouldHaveAverageCashWithdrawal(){
         assertEquals(453.66,bank.averageMinus(), 0.0001);
     }
 
     @Test
-    public void shouldHaveAverageCashWithdrawal(){
+    public void shouldHaveAverageCashDeposit(){
         assertEquals(326.83,bank.averagePlus(), 0.0001);
     }
+
+    @Test
+    public void shouldBeZeroSaldoIfBankDontHaveCashmachine(){
+        assertEquals(0, bank.bilans());
+    }
+
+    @Test
+    public void shouldHaveZeroAverageIfBankDontHaveCashmachine(){
+        assertEquals(0, bank.average());
+    }
+
+
 
 
 }

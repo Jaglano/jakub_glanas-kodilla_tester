@@ -22,6 +22,9 @@ public class CashMachine {
     }
 
     public int saldo() {
+        if (this.values.length == 0) {
+            return 0;
+        }
         int sum = 0;
         for (int i = 0; i < values.length; i++) {
             sum += this.values[i];

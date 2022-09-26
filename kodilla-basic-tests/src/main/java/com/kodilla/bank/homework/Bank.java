@@ -12,12 +12,15 @@ public class Bank {
     public void add(CashMachine cashMachine) {
         this.size++;
         CashMachine[] newTab = new CashMachine[this.size];
-        System.arraycopy(cashMachine, 0, newTab, 0, cashMachines.length);
+        System.arraycopy(cashMachines, 0, newTab, 0, cashMachines.length);
         newTab[this.size -1 ] = cashMachine;
         this.cashMachines = newTab;
     }
 
     public int bilans(){
+        if (size == 0) {
+            return 0;
+        }
         int sum = 0;
         for (int i = 0; i < size; i++){
             sum += cashMachines[i].saldo();
@@ -42,6 +45,9 @@ public class Bank {
     }
 
     public double average(){
+        if (size == 0) {
+            return 0;
+        }
         double sum = bilans();
         int quantity = 0;
         for (int i = 0; i < size; i++){
@@ -51,6 +57,9 @@ public class Bank {
     }
 
     public double averageMinus(){
+        if (size == 0) {
+            return 0;
+        }
         double sum = bilans();
         int quantity = 0;
         for (int i = 0; i < size; i++) {
@@ -61,6 +70,9 @@ public class Bank {
     }
 
     public double averagePlus(){
+        if (size == 0) {
+            return 0;
+        }
         double sum = bilans();
         int quantity = 0;
         for (int i = 0; i < size; i++) {

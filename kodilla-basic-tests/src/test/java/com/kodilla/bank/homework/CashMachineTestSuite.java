@@ -43,4 +43,13 @@ public class CashMachineTestSuite {
 
         assertEquals(2, cashMachine.quantinty());
     }
+
+    @Test
+    public void shouldCalculateQuantityCashDeposit(){
+        CashMachine cashMachine = new CashMachine();
+        cashMachine.add(200);
+        cashMachine.add(100);
+
+        assertEquals(2, cashMachine.cashDeposit());
+    }
 }

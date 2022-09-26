@@ -60,26 +60,26 @@ public class Bank {
         if (size == 0) {
             return 0;
         }
-        double sum = bilans();
+        double sumAverage = 0;
         int quantity = 0;
         for (int i = 0; i < size; i++) {
-            sum += cashMachines[i].saldoMinus();
+            sumAverage += cashMachines[i].saldoMinus();
             quantity += cashMachines[i].cashWithdrawal();
         }
-        return sum / quantity;
+        return sumAverage / quantity;
     }
 
     public double averagePlus(){
         if (size == 0) {
             return 0;
         }
-        double sum = bilans();
+        double sumAverage = 0;
         int quantity = 0;
         for (int i = 0; i < size; i++) {
-            sum += cashMachines[i].saldoPlus();
+            sumAverage += cashMachines[i].saldoPlus();
             quantity += cashMachines[i].cashDeposit();
         }
-        return sum / quantity;
+        return sumAverage / quantity;
     }
 
 }

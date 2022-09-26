@@ -58,7 +58,8 @@ public class BankTestSuite {
     @Test
     public void shouldHaveAverageCashDeposit(){
         transaction();
-        assertEquals(326.83,bank.averagePlus(), 0.0001);
+
+        assertEquals(325,bank.averagePlus(), 0.0001);
     }
 
     @Test

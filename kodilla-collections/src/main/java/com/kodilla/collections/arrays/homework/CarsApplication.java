@@ -21,9 +21,9 @@ public class CarsApplication {
     public static Car drawCar() {
         Random random = new Random();
         int drawCarKind = random.nextInt(3);
-        int a = 160;
-        int b = 180;
-        int c = 200;
+        int a = random.nextInt(200);
+        int b = random.nextInt(200);
+        int c = random.nextInt(200);
         if (drawCarKind == 0) {
             return new Ford(a, 0, 0);
         } else if (drawCarKind == 1) {
@@ -32,4 +32,5 @@ public class CarsApplication {
             return new Skoda(c, 0 ,0);
         }
     }
+
 }

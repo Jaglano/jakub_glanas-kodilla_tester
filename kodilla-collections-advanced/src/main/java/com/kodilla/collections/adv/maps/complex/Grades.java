@@ -22,9 +22,7 @@ public class Grades {
 
     @Override
     public String toString() {
-        return "Grades{" +
-                "grades=" + grades +
-                '}';
+        return "Grades: " + grades.toString();
     }
 }
 

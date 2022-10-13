@@ -15,12 +15,12 @@ class ForumStatsTest {
 
 
     @Test
-    public  void testGetAverageNumberOfPostsForPeopleOlderOrEqualToFortyYearsOfAge(){
+    public  void avgOver40(){
         double avg = ForumStats.averageOfPostsOver40(UsersRepository.getUsersList());
         assertEquals(2.25,avg,0.000001);
     }
     @Test
-    public void testGetAverageNumberOfPostsForPeopleYoungerThanFortyYearsOfAge() {
+    public void avgUnder40() {
         double avg = ForumStats.averageOfPostsUnder40(UsersRepository.getUsersList());
         assertEquals(2381,avg,0.0000001);
     }

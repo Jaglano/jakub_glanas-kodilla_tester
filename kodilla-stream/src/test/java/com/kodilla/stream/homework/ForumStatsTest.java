@@ -12,17 +12,26 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ForumStatsTest {
 
-
+    public static List<User> getUsersList(){
+        List<User> test = new ArrayList<>();
+        test.add(new User("test", 42, 100, "test"));
+        test.add(new User("test", 41, 0, "test"));
+        test.add(new User("test", 40, 100, "test"));
+        test.add(new User("test", 39, 200, "test"));
+        test.add(new User("test", 38, 0, "test"));
+        test.add(new User("test", 37, 200, "test"));
+        return test;
+    }
 
     @Test
     public  void avgOver40(){
-        double avg = ForumStats.averageOfPostsOver40(UsersRepository.getUsersList());
-        assertEquals(2.25,avg,0.000001);
+        double avg = ForumStats.averageOfPostsOver40(ForumStatsTest.getUsersList());
+        assertEquals(66.67,avg,0.0001);
     }
     @Test
     public void avgUnder40() {
-        double avg = ForumStats.averageOfPostsUnder40(UsersRepository.getUsersList());
-        assertEquals(2381,avg,0.0000001);
+        double avg = ForumStats.averageOfPostsUnder40(ForumStatsTest.getUsersList());
+        assertEquals(133.33,avg,0.0000001);
     }
 
 

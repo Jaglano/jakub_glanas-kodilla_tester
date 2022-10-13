@@ -26,12 +26,12 @@ class ForumStatsTest {
     @Test
     public  void avgOver40(){
         double avg = ForumStats.averageOfPostsOver40(ForumStatsTest.getUsersList());
-        assertEquals(66.67,avg,0.0001);
+        assertEquals(66.67,avg,1);
     }
     @Test
     public void avgUnder40() {
         double avg = ForumStats.averageOfPostsUnder40(ForumStatsTest.getUsersList());
-        assertEquals(133.33,avg,0.0000001);
+        assertEquals(133.33,avg,1);
     }
 
 

@@ -1,5 +1,7 @@
 package com.kodilla.collections.adv.maps.extrahomework;
 
+import java.util.Map;
+
 public class Solution {
     public static void main(String[] args) {
         int suma1 = sumaTablicy(new int[]{1, 2, 3, 4, 10, 11});
@@ -47,11 +49,15 @@ public class Solution {
     }
 
     private static Integer numberOfPairs(int[] array) {
+        //MAPA!! liczba/ilość powtórzeń
         //w argumencie metoda przyjmuje tablicę liczb
         //wyświetl/zwróć liczbę par znajduje się w tablicy
         //przykład 1: tablica zawiera: 10, 10, 20, wynik: w tablicy znajduje się jedna para
         //przykład 2: tablica zawiera: 10, 20, 30, wynik: w tablicy nie znajduje się żadna para
         //przykład 3: tablica zawiera: 20, 20, 30, 40, 20, wynik: w tablicy znajduje się jedna para
+
+
+
         int pairs = 0;
         for (int i = 0; i < array.length; i++) {
             for (int j = i + 1; j < array.length; j++) {
@@ -63,4 +69,3 @@ public class Solution {
         return pairs;
     }
 }
-

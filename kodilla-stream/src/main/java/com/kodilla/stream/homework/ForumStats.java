@@ -9,23 +9,21 @@ public class ForumStats {
 
 
     public static double averageOfPostsOver40(List<User> userList) {
-        double average = userList
+        return userList
                 .stream()
-                .filter(a -> a.getAge() >= 40)
-                .mapToInt(p -> p.getNumberOfPost())
+                .filter(user -> user.getAge() >= 40)
+                .mapToInt(user -> user.getNumberOfPost())
                 .average()
-                .getAsDouble();
-        return average;
+                .orElse(0.0);
     }
 
     public static double averageOfPostsUnder40(List<User> usersList) {
-        double average = usersList
+        return usersList
                 .stream()
-                .filter(a -> a.getAge() < 40)
-                .mapToInt(p -> p.getNumberOfPost())
+                .filter(user -> user.getAge() < 40)
+                .mapToInt(user -> user.getNumberOfPost())
                 .average()
-                .getAsDouble();
-        return average;
+                .orElse(0.0);
     }
 
     public static void main(String[] args) {

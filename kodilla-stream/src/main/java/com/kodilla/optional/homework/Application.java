@@ -4,7 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public class Application {void main(String[] args) {
+public class Application {
+    void main(String[] args) {
         List<Student> students = new ArrayList<>();
         students.add(new Student("Jerzy", new Teacher("Urban")));
         students.add(new Student("Aleksander", new Teacher("Nowak")));

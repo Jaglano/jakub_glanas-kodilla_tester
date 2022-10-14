@@ -12,6 +12,9 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ForumStatsTest {
 
+
+
+
     public static List<User> getUsersList(){
         List<User> test = new ArrayList<>();
         test.add(new User("test", 42, 100, "test"));
@@ -23,6 +26,8 @@ class ForumStatsTest {
         return test;
     }
 
+
+
     @Test
     public  void avgOver40(){
         double avg = ForumStats.averageOfPostsOver40(ForumStatsTest.getUsersList());
@@ -33,6 +38,4 @@ class ForumStatsTest {
         double avg = ForumStats.averageOfPostsUnder40(ForumStatsTest.getUsersList());
         assertEquals(133.33,avg,1);
     }
-
-
 }

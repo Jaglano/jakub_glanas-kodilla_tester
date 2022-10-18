@@ -8,4 +8,5 @@ findProject(':kodilla-collections-advanced:codewars')?.name = 'codewars'
 include 'codewars'
 include 'codewars'
 include 'kodilla-stream'
+include 'kodilla-advanced-tests'
 

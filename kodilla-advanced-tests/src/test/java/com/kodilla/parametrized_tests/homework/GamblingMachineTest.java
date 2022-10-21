@@ -2,6 +2,7 @@ package com.kodilla.parametrized_tests.homework;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
 
@@ -10,6 +11,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -44,10 +46,6 @@ class GamblingMachineTest {
         Set<Integer> numToCheck = new HashSet<>(test);
         Assertions.assertThrows(InvalidNumbersException.class, () -> gamblingMachine.validateNumbers(numToCheck));
     }
-
-
-
-
 }
 
 

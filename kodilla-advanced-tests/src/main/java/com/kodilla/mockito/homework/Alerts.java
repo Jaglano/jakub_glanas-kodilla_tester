@@ -4,7 +4,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 
-public class Alerts {
+public class Alerts extends Exception{
     private Map<Location, List<User>> locations = new HashMap<>();
     private Notify notify;
 
@@ -24,8 +24,19 @@ public class Alerts {
 
     //remove Subscriber
     public void removeSubscriber(User user, Location location){
-        List<User> userList = locations.get(location);
-        userList.remove(user);
+        boolean check2 = locations.containsKey(location);
+        if (check2){
+            try {
+                List<User> userList = locations.get(location);
+                userList.remove(user);
+            } catch (Exception e) {
+                System.out.println("User doesn't subscribe this location");
+            }
+        } else {
+            System.out.println("User doesn't subscribe this location");
+        }
+
+
     }
 
     //add location
@@ -35,7 +46,7 @@ public class Alerts {
 
     //remove location
     public void removeLocation(Location location){
-        locations.remove(location, new ArrayList<>());
+        locations.remove(location);
     }
 
     //remove Subscriber from all locations
@@ -57,5 +68,12 @@ public class Alerts {
     public void sendNotifyToLocation(Location location, String message){
         List<User>users = locations.get(location);
         users.forEach(a->notify.alert(a, message));
+    }
+
+    //check location exist
+    public boolean checkLocation(Location location) {
+        boolean check;
+        check = locations.containsKey(location);
+        return check;
     }
 }

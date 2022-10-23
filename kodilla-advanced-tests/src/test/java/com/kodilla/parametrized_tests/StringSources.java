@@ -1,5 +1,6 @@
 package com.kodilla.parametrized_tests;
 
+
 import org.junit.jupiter.params.provider.Arguments;
 
 import java.util.stream.Stream;

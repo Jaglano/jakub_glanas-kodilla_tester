@@ -114,4 +114,10 @@ class AlertsTest {
         verify(notifyMock,times(0)).alert(new User("Bob"),"Alert RCB...");
     }
 
+    @Test
+    void shouldCheckLocationIsInBase(){
+        Assertions.assertTrue(weatherAlerts.checkLocation(new Location("Berlin")));
+        Assertions.assertFalse(weatherAlerts.checkLocation(new Location("Wieliczka")));
+    }
+
 }

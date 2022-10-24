@@ -23,21 +23,17 @@ public class Alerts extends Exception{
     }
 
     //remove Subscriber
-    public void removeSubscriber(User user, Location location){
-        boolean check2 = locations.containsKey(location);
-        if (check2){
-            try {
-                List<User> userList = locations.get(location);
-                userList.remove(user);
-            } catch (Exception e) {
-                System.out.println("User doesn't subscribe this location");
-            }
-        } else {
-            System.out.println("User doesn't subscribe this location");
+    public void removeSubscriber(User user, Location location) {
+        if (locations.containsKey(location)) {
+            List<User> userList = locations.get(location);
+            userList.remove(user);
         }
-
-
     }
+
+
+
+
+
 
     //add location
     public void addLocation(Location location){

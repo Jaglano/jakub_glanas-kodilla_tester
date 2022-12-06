@@ -1,9 +1,16 @@
 package com.kodilla.selenium.pom;
 
-public class KodillaPomApplication {
-    public static void main(String[] args) {
-        KodillaLoginPom loginPom = new KodillaLoginPom();
-        loginPom.login("testuser@gmail.com","kodilla123");
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 
+public class KodillaPomApplication {
+
+    public static void main(String[] args) {
+        System.setProperty("webdriver.chrome.driver", "C:\\selenium-drivers\\Chrome\\chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+        driver.navigate().to("https://kodilla.com/pl/test/login");
+        KodillaLoginPom loginPom = new KodillaLoginPom(driver);
+        loginPom.login("test@kodilla.com", "haslo");
+        driver.close();
     }
 }

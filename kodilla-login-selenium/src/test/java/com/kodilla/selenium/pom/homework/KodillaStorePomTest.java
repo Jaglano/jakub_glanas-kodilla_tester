@@ -29,7 +29,7 @@ class KodillaStorePomTest {
         String searchWord = "NoteBook";
         searchPom.search(searchWord);
         Thread.sleep(5000);
-        List<WebElement> find = (List<WebElement>) driver.findElement(By.xpath("//*[@id=\"elements-wrapper\"]/div"));
+        List<WebElement> find = driver.findElements(By.xpath("//*[@id=\"elements-wrapper\"]/div"));
         int laptop = find.size();
         assertEquals(2, laptop);
 
@@ -39,6 +39,9 @@ class KodillaStorePomTest {
         String searchWord = "School";
         searchPom.search(searchWord);
         Thread.sleep(5000);
+        List<WebElement> find = driver.findElements(By.xpath("//*[@id=\"elements-wrapper\"]/div"));
+        int laptop = find.size();
+        assertEquals(1, laptop);
 
     }
     @Test
@@ -46,6 +49,9 @@ class KodillaStorePomTest {
         String searchWord = "Brand";
         searchPom.search(searchWord);
         Thread.sleep(5000);
+        List<WebElement> find = driver.findElements(By.xpath("//*[@id=\"elements-wrapper\"]/div"));
+        int laptop = find.size();
+        assertEquals(1, laptop);
 
     }
     @Test
@@ -53,6 +59,9 @@ class KodillaStorePomTest {
         String searchWord = "Business";
         searchPom.search(searchWord);
         Thread.sleep(5000);
+        List<WebElement> find = driver.findElements(By.xpath("//*[@id=\"elements-wrapper\"]/div"));
+        int laptop = find.size();
+        assertEquals(0, laptop);
 
     }
     @Test
@@ -60,6 +69,9 @@ class KodillaStorePomTest {
         String searchWord = "Gaming";
         searchPom.search(searchWord);
         Thread.sleep(5000);
+        List<WebElement> find = driver.findElements(By.xpath("//*[@id=\"elements-wrapper\"]/div"));
+        int laptop = find.size();
+        assertEquals(1, laptop);
 
     }
     @Test
@@ -67,6 +79,9 @@ class KodillaStorePomTest {
         String searchWord = "Powerful";
         searchPom.search(searchWord);
         Thread.sleep(5000);
+        List<WebElement> find = driver.findElements(By.xpath("//*[@id=\"elements-wrapper\"]/div"));
+        int laptop = find.size();
+        assertEquals(0, laptop);
 
     }
     @Test
@@ -74,6 +89,9 @@ class KodillaStorePomTest {
         String searchWord = "GaMiNg";
         searchPom.search(searchWord);
         Thread.sleep(5000);
+        List<WebElement> find = driver.findElements(By.xpath("//*[@id=\"elements-wrapper\"]/div"));
+        int laptop = find.size();
+        assertEquals(1, laptop);
 
     }
 

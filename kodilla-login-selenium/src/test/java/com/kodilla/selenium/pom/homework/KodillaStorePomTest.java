@@ -1,13 +1,16 @@
 package com.kodilla.selenium.pom.homework;
 
 import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import static org.junit.jupiter.api.Assertions.*;
+import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class KodillaStorePomTest {
     KodillaStorePom searchPom;
@@ -26,6 +29,9 @@ class KodillaStorePomTest {
         String searchWord = "NoteBook";
         searchPom.search(searchWord);
         Thread.sleep(5000);
+        List<WebElement> find = (List<WebElement>) driver.findElement(By.xpath("//*[@id=\"elements-wrapper\"]/div"));
+        int laptop = find.size();
+        assertEquals(2, laptop);
 
     }
     @Test

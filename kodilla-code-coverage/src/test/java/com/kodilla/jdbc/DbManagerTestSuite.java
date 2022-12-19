@@ -1,13 +1,14 @@
 package com.kodilla.jdbc;
 
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
+
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.AbstractMap;
 import java.util.List;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.BeforeAll;
-import java.sql.SQLException;
 
 class DbManagerTestSuite {
     private static DbManager dbManager;
@@ -73,7 +74,7 @@ class DbManagerTestSuite {
 
     private static int getResultsCount(ResultSet rs) throws SQLException {
         int counter = 0;
-        while (rs.next()) {
+        while(rs.next()) {
             System.out.printf("%d, %s, %s%n",
                     rs.getInt("ID"),
                     rs.getString("FIRSTNAME"),
@@ -89,5 +90,45 @@ class DbManagerTestSuite {
             count = rs.getInt("COUNT(*)");
         }
         return count;
+    }
+    @Test
+    void testSelectUsersAndPosts() throws SQLException {
+        //Given
+        DbManager dbManager = DbManager.getInstance();
+        String countQuery = "SELECT U.FIRSTNAME, U.LASTNAME, COUNT(*) FROM USERS U\n" +
+                "JOIN POSTS P ON U.ID = P.USER_ID\n" +
+                "GROUP BY P.USER_ID\n" +
+                "HAVING COUNT(*) > 1;";
+        Statement statement = dbManager.getConnection().createStatement();
+        ResultSet rs = statement.executeQuery(countQuery);
+
+        int count = 0;
+
+        while(rs.next()) {
+            System.out.println(rs.getString("FIRSTNAME") + ", " +
+                    rs.getString("LASTNAME"));
+            count++;
+        }
+
+        // When
+        String sqlQuery = "SELECT U.FIRSTNAME, U.LASTNAME, COUNT(*) FROM USERS U\n" +
+                "JOIN POSTS P ON U.ID = P.USER_ID\n" +
+                "GROUP BY P.USER_ID\n" +
+                "HAVING COUNT(*) > 1;";
+        statement = dbManager.getConnection().createStatement();
+        rs = statement.executeQuery(sqlQuery);
+
+        //Then
+        int counter = 0;
+        while(rs.next()) {
+            System.out.println(rs.getString("FIRSTNAME") + ", " +
+                    rs.getString("LASTNAME"));
+            counter++;
+        }
+        int expected = count ;
+        Assertions.assertEquals(expected, counter);
+
+        rs.close();
+        statement.close();
     }
 }

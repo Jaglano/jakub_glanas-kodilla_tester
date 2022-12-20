@@ -11,6 +11,8 @@ public class Task {
     private String description;
     private LocalDate created;
     private int duration;
+    //private TaskFinancialDetails taskFinancialDetails;
+    //private TaskList taskList;
 
     public Task() {
     }
@@ -60,4 +62,23 @@ public class Task {
     private void setDuration(int duration) {
         this.duration = duration;
     }
+
+    /*
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name = "TASKS_FINANCIALS_ID")
+    public TaskFinancialDetails getTaskFinancialDetails() {
+        return taskFinancialDetails;
+    }
+
+    public void setTaskFinancialDetails(TaskFinancialDetails taskFinancialDetails) {
+        this.taskFinancialDetails = taskFinancialDetails;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "TASKLIST_ID")
+    public TaskList getTaskList() {
+        return taskList;
+    }
+
+     */
 }

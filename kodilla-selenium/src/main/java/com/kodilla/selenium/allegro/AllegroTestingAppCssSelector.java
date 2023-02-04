@@ -8,6 +8,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.List;
 
 public class AllegroTestingAppCssSelector {
@@ -15,7 +16,7 @@ public class AllegroTestingAppCssSelector {
         System.setProperty("webdriver.chrome.driver", "C:\\selenium-drivers\\Chrome\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.get("https://allegro.pl/");
-        WebDriverWait wait = new WebDriverWait(driver, 20);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
 
 
         driver.findElement(By.cssSelector("button[data-role*=accept-consent]")).click();

@@ -26,6 +26,7 @@ public class GeneralShapesListApplication {
 
         for (Shape shape : shapes) {
             System.out.println(shape + " , area: " + shape.getArea() + " , perimeter: " + shape.getPerimeter());
+
         }
     }
 }
